@@ -1,0 +1,2 @@
+silverstripe-shop-loyalty-vouchers
+==================================
