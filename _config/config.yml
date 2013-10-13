@@ -1,0 +1,12 @@
+Payment:
+  extensions:
+    - LoyaltyVoucherPayment
+Member:
+  extensions:
+    - LoyaltyVoucherMemberExtension
+Order:
+  extensions:
+    - LoyaltyVoucherOrderExtension
+SiteConfig:
+  extensions:
+    - LoyaltyVoucherConfig
