@@ -21,7 +21,7 @@ class LoyaltyVoucherConfig extends DataExtension {
 	public function updateCMSFields(FieldList $fields) {
 		$fields->addFieldsToTab('Root.Shop.ShopTabs.LoyaltyRewards', array(
 			NumericField::create('RewardThreshold', 'Reward Threshold')->setDescription('How much a member spends before getting a reward'),
-			DropdownField::create('RewardType', 'Reward Type')->setDescription('The type of discount for the reward'),
+			DropdownField::create('RewardType', 'Reward Type', $this->owner->dbObject('RewardType')->enumValues())->setDescription('The type of discount for the reward'),
 			CurrencyField::create('RewardAmount', 'Reward Amount')->setDescription('The amount of discount if Reward Type is Amount'),
 			NumericField::create('RewardPercent', 'Reward Percent')->setDescription('The percent discount if Reward Type is Percent (eg 0.05 = 5%, 0.5 = 50%, and 5 = 500%)'),
 			ToggleCompositeField::create('RewardEmail', 'Email', array(
