@@ -39,7 +39,7 @@ class LoyaltyVoucherMemberExtension extends DataExtension
 
 		$config = SiteConfig::current_site_config();
 
-		if ($this->owner->RewardAmount >= $config->RewardThreshold) {
+		if ($this->owner->RewardAmount >= $config->RewardThreshold && $config->RewardThreshold > 0) {
 			//work out how many rewards they got for this order
 			$noRewards = floor($this->owner->RewardAmount / $config->RewardThreshold);
 			//remove the amount which got used for the reward
