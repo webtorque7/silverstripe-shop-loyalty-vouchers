@@ -55,6 +55,7 @@ class LoyaltyVoucherMemberExtension extends DataExtension
 
 	public function giveReward($noRewards) {
 
+
 		$config = SiteConfig::current_site_config();
 
 		$this->owner->NoRewards += $noRewards;
@@ -62,10 +63,11 @@ class LoyaltyVoucherMemberExtension extends DataExtension
 		//new coupon for each rewards
 		for ($i = 0; $i <= $noRewards; $i++) {
 			$reward = OrderCoupon::create();
+                        $reward->Title = $config->RewardTitle;
 			$reward->MemberID = $this->owner->ID;
 			$reward->Type = $config->RewardType;
 			$reward->Amount = $config->RewardAmount;
-			$reward->Percentage = $config->RewardPercentage;
+			$reward->Percent = $config->RewardPercent;
 			$reward->Active = true;
 			$reward->write();
 
