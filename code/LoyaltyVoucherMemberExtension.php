@@ -86,7 +86,7 @@ class LoyaltyVoucherMemberExtension extends DataExtension
 			'$FirstName' => $this->owner->FirstName,
 			'$Surname' => $this->owner->Surname,
 			'$Name' => $this->owner->Name,
-			'$Code' => $voucher->getCode()
+			'$Code' => $voucher->Code
 		));
 
 		$email->send();
